@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<h1>model form으로 글 작성하기</h1>
+<br>
+<div class="jumbotron">
+    <form method = "POST" action="{% url 'new_form' %}">
+       {% csrf_token %}
+       <table>
+           {{form.as_table}}
+
+       </table>
+    <button type="submit"  class="btn btn-info">글작성</button>
+
+   
+    </form>
+</div><br><br>
+
+<button type="button" class="btn btn-secondary"><a href="{% url 'index' %}">홈으로</a></button>
+
+
+{% endblock %}

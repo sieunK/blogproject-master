@@ -1,0 +1,17 @@
+.navbar-collapse{
+    float:right;
+}
+.nav-item{
+    display: inline;
+    float: right;
+    
+}
+.navbar-nav{
+    float:right;
+}
+.nav-link{
+float:right;
+}
+a{
+    color:black;
+}

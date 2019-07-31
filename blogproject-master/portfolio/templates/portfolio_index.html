@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+{% load static %}
+{% block css  %}
+ <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+        
+{% endblock %}
+{% block content%}
+
+
+
+<div class="row">
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+        <img src="{% static 'image/7기 포스터.jpg' %}" height="300px">
+        </div>
+    </div>
+
+    {%for portfolio in portfolio.all %}
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ portfolio.image.url}}" class="card-img-top" alt="{% static 'image/default.png'%}"  height="300px">
+           
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+{%endblock%}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>detail page</h1>
+
+<div class="jumbotron">
+        <p>{{blog.title}} | {{blog.make_date}}</p><br>
+       
+        {{blog.summary}}
+
+</div><br><br>
+
+<button type="button" class="btn btn-secondary"><a href="{% url 'index' %}">홈으로</a></button>
+{% endblock %}

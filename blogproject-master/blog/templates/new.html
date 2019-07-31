@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<h1>html상의 form으로 글쓰기</h1><br>
+
+<div class="jumbotron">
+    <form action="{% url 'create' %}">
+        <strong><label for="title">제 목 : </label></strong><br>
+        <input type="text" id="title" placeholder="제목을 입력해주세요" name="title">
+        <Br><br>
+    
+        <strong><label for="description">본 문 :</label></strong><br>
+        <textarea id="description" placeholder="본문을 입력해주세요" name="description" cols="30" rows="10"></textarea><br><br>
+    <button type="submit" class="btn btn-info">글작성</button>
+    </form>
+</div>
+
+
+<button type="button" class="btn btn-secondary"><a href="{% url 'index' %}">홈으로</a></button>
+{% endblock %}

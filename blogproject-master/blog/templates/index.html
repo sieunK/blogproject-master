@@ -1,0 +1,65 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<h1> < 게 시 판 ></h1>
+<br>
+<div class="row">
+{%for i in posts %}
+<div class = "col-4">
+<div class="card" style="width: 18rem;">
+    <img src="{% static 'image/default.png'%}" class="card-img-top" alt="{% static 'image/default.png'%}">
+    <div class="card-body">
+        <h5 class="card-title">{{i.title}} | {{i.make_date|date:"Y년 n월 j일"}}</h5>
+        <p class="card-text">{{i.summary}}</p>
+        <a class="detail-btn" href="{%url 'detail' i.id%}">Go detail</a>
+    </div>
+</div>
+</div>
+{%endfor%}
+</div><br><br>
+{# #}
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+
+        {% if posts.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page=1" tabindex="-1" aria-disabled="true"><<</a>
+        </li>
+        {% if posts.number != 2 %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{posts.previous_page_number}}">{{posts.previous_page_number}}</a>
+        </li>
+        {%endif%}
+        {%endif%}
+        <li class="page-item">
+            <a class="page-link" href="#">{{posts.number}} </a>
+        </li>
+
+
+        {%if posts.has_next %}
+        
+        {%if posts.next_page_number != posts.paginator.num_pages %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{posts.next_page_number}}"> {{posts.next_page_number}}</a>
+        </li>
+        {%endif%}
+        <li class="page-item">
+         <a class="page-link"  href="?page={{posts.paginator.num_pages}}"> >></a>
+        </li>
+        {%endif%}
+
+    </ul>
+</nav>
+
+
+
+
+
+
+{% endblock %}
+

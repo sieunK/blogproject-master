@@ -1,0 +1,23 @@
+
+.card{
+    margin-bottom: 10px;
+}
+.btn-info{
+    float: right;
+}
+.jumbotron{
+    width: 70%;
+}
+a{
+    color:black;
+}
+
+.detail-btn{
+    border:0.5px dimgray solid;
+    background: dimgray;
+    padding : 5px;
+    color: darkred;
+    font-weight: bold;
+   
+    float:right;
+}
